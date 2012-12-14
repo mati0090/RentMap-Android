@@ -1,15 +1,20 @@
 package com.rentmap;
 
 import android.os.Bundle;
-import android.app.Activity;
 import android.view.Menu;
 
-public class MainActivity extends Activity {
+import com.google.android.maps.MapActivity;
+import com.google.android.maps.MapView;
+
+public class MainActivity extends MapActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
+        
+        MapView map = (MapView) findViewById(R.id.mapview);
+        map.setBuiltInZoomControls(true);
     }
 
     @Override
@@ -18,5 +23,11 @@ public class MainActivity extends Activity {
         getMenuInflater().inflate(R.menu.main_activity, menu);
         return true;
     }
+
+	@Override
+	protected boolean isRouteDisplayed() {
+		// TODO Auto-generated method stub
+		return false;
+	}
     
 }
