@@ -20,6 +20,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
+import android.preference.PreferenceManager;
 
 import com.google.android.maps.GeoPoint;
 import com.google.android.maps.MapView;
@@ -79,7 +80,8 @@ public class MapMarkersHandler extends AsyncTask<MapView, Void, Void>{
 	public String getMapMarkersFromServer(){
 	    StringBuilder builder = new StringBuilder();
 		HttpClient client = new DefaultHttpClient();
-	    HttpGet httpGet = new HttpGet("http://192.168.0.100:3000/offers.json"); //address of json service with offers here
+		
+	    HttpGet httpGet = new HttpGet(PreferenceManager.getDefaultSharedPreferences(context).getString("pref_key_server_address", "")); 
 	    
 	    try {
 	        HttpResponse response = client.execute(httpGet);

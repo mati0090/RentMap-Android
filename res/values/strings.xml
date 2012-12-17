@@ -4,5 +4,8 @@
     <string name="app_name">RentMap</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
+    <string name="pref_title_server_address">Server address</string>
+    <string name="pref_summary_server_address">Eg. 192.168.0.100:3000</string>
+    <string name="pref_default_server_address">http://192.168.0.100:3000/offers.json</string>
 
 </resources>
