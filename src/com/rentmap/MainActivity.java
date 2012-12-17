@@ -6,15 +6,17 @@ import android.view.Menu;
 import com.google.android.maps.MapActivity;
 import com.google.android.maps.MapView;
 
-public class MainActivity extends MapActivity {
-
-    @Override
+public class MainActivity extends MapActivity {    
+	@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
         
         MapView map = (MapView) findViewById(R.id.mapview);
         map.setBuiltInZoomControls(true);
+        
+        MapMarkersHandler mapMarkersHandler = new MapMarkersHandler(this);
+        mapMarkersHandler.execute(map);
     }
 
     @Override
@@ -29,5 +31,4 @@ public class MainActivity extends MapActivity {
 		// TODO Auto-generated method stub
 		return false;
 	}
-    
 }
